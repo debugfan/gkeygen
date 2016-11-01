@@ -42,6 +42,10 @@ public:
     QLabel *lblSerialNo;
     QLineEdit *edtSerialNo;
     QWidget *page_2;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *lblSNFile;
+    QLineEdit *edtSNFile;
+    QPushButton *btnSelect;
     QGroupBox *grpExpiry;
     QVBoxLayout *verticalLayout_2;
     QRadioButton *rdoNoLimit;
@@ -56,6 +60,10 @@ public:
     QLabel *lblKey;
     QLineEdit *edtKey;
     QWidget *page_4;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *lblKeyFile;
+    QLineEdit *edtKeyFile;
+    QPushButton *btnSave;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer;
     QPushButton *btnGenerate;
@@ -68,7 +76,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(321, 266);
+        MainWindow->resize(350, 272);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -96,6 +104,25 @@ public:
         stkSerialNo->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName(QString::fromUtf8("page_2"));
+        horizontalLayout_5 = new QHBoxLayout(page_2);
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        lblSNFile = new QLabel(page_2);
+        lblSNFile->setObjectName(QString::fromUtf8("lblSNFile"));
+
+        horizontalLayout_5->addWidget(lblSNFile);
+
+        edtSNFile = new QLineEdit(page_2);
+        edtSNFile->setObjectName(QString::fromUtf8("edtSNFile"));
+
+        horizontalLayout_5->addWidget(edtSNFile);
+
+        btnSelect = new QPushButton(page_2);
+        btnSelect->setObjectName(QString::fromUtf8("btnSelect"));
+
+        horizontalLayout_5->addWidget(btnSelect);
+
         stkSerialNo->addWidget(page_2);
 
         verticalLayout->addWidget(stkSerialNo);
@@ -108,6 +135,7 @@ public:
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         rdoNoLimit = new QRadioButton(grpExpiry);
         rdoNoLimit->setObjectName(QString::fromUtf8("rdoNoLimit"));
+        rdoNoLimit->setChecked(true);
 
         verticalLayout_2->addWidget(rdoNoLimit);
 
@@ -121,6 +149,7 @@ public:
 
         edtLimit = new QLineEdit(grpExpiry);
         edtLimit->setObjectName(QString::fromUtf8("edtLimit"));
+        edtLimit->setEnabled(false);
 
         horizontalLayout_4->addWidget(edtLimit);
 
@@ -160,6 +189,25 @@ public:
         stkKey->addWidget(page_3);
         page_4 = new QWidget();
         page_4->setObjectName(QString::fromUtf8("page_4"));
+        horizontalLayout_6 = new QHBoxLayout(page_4);
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        lblKeyFile = new QLabel(page_4);
+        lblKeyFile->setObjectName(QString::fromUtf8("lblKeyFile"));
+
+        horizontalLayout_6->addWidget(lblKeyFile);
+
+        edtKeyFile = new QLineEdit(page_4);
+        edtKeyFile->setObjectName(QString::fromUtf8("edtKeyFile"));
+
+        horizontalLayout_6->addWidget(edtKeyFile);
+
+        btnSave = new QPushButton(page_4);
+        btnSave->setObjectName(QString::fromUtf8("btnSave"));
+
+        horizontalLayout_6->addWidget(btnSave);
+
         stkKey->addWidget(page_4);
 
         verticalLayout->addWidget(stkKey);
@@ -187,7 +235,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 321, 18));
+        menuBar->setGeometry(QRect(0, 0, 350, 18));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -198,6 +246,10 @@ public:
 
         retranslateUi(MainWindow);
 
+        stkSerialNo->setCurrentIndex(0);
+        stkKey->setCurrentIndex(1);
+
+
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
@@ -205,11 +257,17 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Key Generate Tool", 0, QApplication::UnicodeUTF8));
         lblSerialNo->setText(QApplication::translate("MainWindow", "Serial No.", 0, QApplication::UnicodeUTF8));
+        lblSNFile->setText(QApplication::translate("MainWindow", "SN File", 0, QApplication::UnicodeUTF8));
+        btnSelect->setText(QApplication::translate("MainWindow", "Select", 0, QApplication::UnicodeUTF8));
         grpExpiry->setTitle(QApplication::translate("MainWindow", "Expiry", 0, QApplication::UnicodeUTF8));
         rdoNoLimit->setText(QApplication::translate("MainWindow", "No Limit", 0, QApplication::UnicodeUTF8));
         rdoLimit->setText(QApplication::translate("MainWindow", "Limit", 0, QApplication::UnicodeUTF8));
+        edtLimit->setText(QApplication::translate("MainWindow", "90", 0, QApplication::UnicodeUTF8));
         lblLimitUnit->setText(QApplication::translate("MainWindow", "days", 0, QApplication::UnicodeUTF8));
         lblKey->setText(QApplication::translate("MainWindow", "Activie Code", 0, QApplication::UnicodeUTF8));
+        lblKeyFile->setText(QApplication::translate("MainWindow", "Key File", 0, QApplication::UnicodeUTF8));
+        edtKeyFile->setText(QString());
+        btnSave->setText(QApplication::translate("MainWindow", "Save", 0, QApplication::UnicodeUTF8));
         btnGenerate->setText(QApplication::translate("MainWindow", "Generate", 0, QApplication::UnicodeUTF8));
         btnQuit->setText(QApplication::translate("MainWindow", "Quit", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

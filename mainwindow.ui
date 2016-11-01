@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>321</width>
-    <height>266</height>
+    <width>350</width>
+    <height>272</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,6 +17,9 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QStackedWidget" name="stkSerialNo">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
       <widget class="QWidget" name="page">
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
@@ -31,7 +34,27 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_2"/>
+      <widget class="QWidget" name="page_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="lblSNFile">
+          <property name="text">
+           <string>SN File</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="edtSNFile"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSelect">
+          <property name="text">
+           <string>Select</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
     <item>
@@ -45,6 +68,9 @@
          <property name="text">
           <string>No Limit</string>
          </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -57,7 +83,14 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="edtLimit"/>
+          <widget class="QLineEdit" name="edtLimit">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>90</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QLabel" name="lblLimitUnit">
@@ -86,6 +119,9 @@
     </item>
     <item>
      <widget class="QStackedWidget" name="stkKey">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
       <widget class="QWidget" name="page_3">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
@@ -100,7 +136,31 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page_4"/>
+      <widget class="QWidget" name="page_4">
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="lblKeyFile">
+          <property name="text">
+           <string>Key File</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="edtKeyFile">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnSave">
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
     <item>
@@ -141,7 +201,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>321</width>
+     <width>350</width>
      <height>18</height>
     </rect>
    </property>
